@@ -28,13 +28,13 @@ func main() {
 	}
 
 	img.Init(img.INIT_PNG)
-	surface, err := img.Load("../pikachu.png")
+	surface, err := img.Load("../../asset/someone.png")
 	if err != nil {
 		log.Fatalf("Unable to load surface: %s", err)
 	}
 
 	// Replace yellows by purple
-	colorKey := sdl.MapRGB(surface.Format, 244, 212, 88)
+	colorKey := sdl.MapRGB(surface.Format, 0, 0xff, 0xff)
 	surface.SetColorKey(true, colorKey)
 
 	texture, err := renderer.CreateTextureFromSurface(surface)
